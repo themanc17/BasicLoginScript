@@ -1,0 +1,66 @@
+#Menu for the Login Script
+
+def menu():
+    print("[1]Sign in")
+    print("[2]Register an Account")
+    print("[0]Exit Program")
+
+username = ["frog", "kevin", "marquois"]
+
+menu()
+option = int(input("Enter your option "))
+
+while option != 0:
+    if option ==1:
+        user = input("Username: ")
+        if user in username:
+            password = input("Password: ")
+            if user == "frog":
+                if password == "ilovefrogs":
+                    print("Welcome " + user + "!")
+                    break
+                else:
+                    print("Password Not Recognised!")
+            if user == "kevin":
+                if password == "password":
+                    print ("Welcome " + user + "!")
+                    break
+                else:
+                        print("Password Not Recognised!")
+            if user == "marquois":
+                if password == "superstrongpassword":
+                    print("Welcome " + user + "!")
+                    break
+                else:
+                    print("Password Not Recognised!")
+        else:
+            if user == "guest":
+                print("Welcome Guest, please note you'll have limited access as Guest")
+                break
+            else:
+                print("Username Not Recognised")
+
+    elif option ==2:
+        print("Register an Account Now")
+        username.insert(0, input("Username: "))
+
+        password1 = input("Please set a password: ")
+
+        print ("Now you can log in as usual")
+        user = input("Enter your Username: ")
+
+        if user in username:
+            password = input("Password: ")
+            if password == password1:
+                print ("Welcome " + user + "!")
+                break    
+        else:
+            print(username)
+
+    else:
+        print("Invalid Option")
+    menu()
+    option = int(input("Enter your option "))
+
+print("Thanks for using the Program!")
+
